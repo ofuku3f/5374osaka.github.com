@@ -83,7 +83,7 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 0) {
-      result_text += "この地域の収集はありません" + this.dayCell[j]; //収集のない町内は0としての対応 
+      result_text += "この地域の収集はありません"; //収集のない町内は0としての対応 
     } else if (this.dayCell[j].length == 1) {
       result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
