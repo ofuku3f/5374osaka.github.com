@@ -94,6 +94,7 @@ var TrashModel = function(_lable, _cell, remarks) {
           if (remark.id == day.substr(1,1)){
             ret += remark.text + "<br/>";
           }
+      }
     } else {
       // 不定期回収の場合（YYYYMMDD指定）
       result_text = "不定期 ";
