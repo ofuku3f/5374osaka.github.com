@@ -84,7 +84,7 @@ var TrashModel = function(_lable, _cell, remarks) {
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 0) {
       result_text = "この地域の収集はありません"; //収集のない町内は0としての対応 
-     // this.regularFlg = 0;  // 定期回収フラグオフ
+      this.regularFlg = 0;  // 定期回収フラグオフ
     } else if (this.dayCell[j].length == 1) {
       result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
@@ -98,9 +98,11 @@ var TrashModel = function(_lable, _cell, remarks) {
   }
   this.dayLabel = result_text;
 
-  this.getDateLabel = function() {
-    var result_text = this.mostRecent.getFullYear() + "/" + (1 + this.mostRecent.getMonth()) + "/" + this.mostRecent.getDate();
-    return this.getRemark() + this.dayLabel + " " + result_text;
+  if (this.dayCell[j].length > 0){
+    this.getDateLabel = function() {
+     var result_text = this.mostRecent.getFullYear() + "/" + (1 + this.mostRecent.getMonth()) + "/" + this.mostRecent.getDate();
+      return this.getRemark() + this.dayLabel + " " + result_text;
+    }
   }
 
   var day_enum = ["日", "月", "火", "水", "木", "金", "土"];
