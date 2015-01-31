@@ -83,14 +83,13 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 0) {
-      result_text = "この地域の収集はありません"; //収集のない町内は0としての対応 
-      this.regularFlg = 0;  // 定期回収フラグオフ
+     // result_text = "この地域の収集はありません"; //収集のない町内は0としての対応 
+     // this.regularFlg = 0;  // 定期回収フラグオフ
     } else if (this.dayCell[j].length == 1) {
       result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
       result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) == "*") {
-      getRemark();
     } else {
       // 不定期回収の場合（YYYYMMDD指定）
       result_text = "不定期 ";
