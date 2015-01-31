@@ -652,10 +652,10 @@ $(function() {
       setSelectedAreaName("");
     }
 
-  //た収集なしのデータの時のアコーディオンを閉じる処理-くらの
+  //ゴミ収集なしのデータの時のアコーディオンを閉じる処理-くらの
     if (wastetoff == 1){
       $("#accordion").html("");
-      $("#select_area").html(checkAreaMasterName);
+      //$("#select_area").html(checkAreaMasterName);
       //setSelectedAreaName("");
     }
     
