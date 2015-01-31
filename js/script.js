@@ -80,11 +80,13 @@ var TrashModel = function(_lable, _cell, remarks) {
 
   var result_text = "";
   var today = new Date();
+  var wastetoff = 0; //ゴミ収集なしのフラグ（デフォルトは0) 京都用設定
 
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 0) {
       result_text = "この地域の収集はありません"; //収集のない町内は0としての対応 
-      //this.regularFlg = 0;  // 定期回収フラグオフ
+      this.regularFlg = 0;  // 定期回収フラグオフ
+      wastetoff = 1;
     } else if (this.dayCell[j].length == 1) {
       result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
@@ -650,6 +652,15 @@ $(function() {
       setSelectedAreaName("");
     }
 
+  //た収集なしのデータの時のアコーディオンを閉じる処理-くらの
+    if (wastetoff == 1){
+      $("#accordion").html("");
+      $("#select_area").html(checkAreaMasterName);
+      //setSelectedAreaName("");
+    }
+    
+    
+    
     areaModels.length = 0;
 
     setSelectedAreaMasterName(areaMasterModels[row_index].name);
