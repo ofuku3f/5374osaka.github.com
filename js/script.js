@@ -84,7 +84,7 @@ var TrashModel = function(_lable, _cell, remarks) {
   for (var j in this.dayCell) {
     if (this.dayCell[j].length == 0) {
       result_text = "この地域の収集はありません"; //収集のない町内は0としての対応 
-      this.regularFlg = 0;  // 定期回収フラグオフ
+      //this.regularFlg = 0;  // 定期回収フラグオフ
     } else if (this.dayCell[j].length == 1) {
       result_text += "毎週" + this.dayCell[j] + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
@@ -362,7 +362,7 @@ $(function() {
 
   function masterAreaList() {
     // ★エリアのマスターリストを読み込みます
-    // 大阪府仕様。大阪府下の区一覧です
+    // 京都市は、大阪府仕様。大阪府下の区一覧を利用しています。
     csvToArray("data/area_master.csv", function(tmp) {
       var area_master_label = tmp.shift();    // ラベル
       for (var i in tmp) {
