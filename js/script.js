@@ -90,6 +90,7 @@ var TrashModel = function(_lable, _cell, remarks) {
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
       result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) == "*") {
+      getRemark();
     } else {
       // 不定期回収の場合（YYYYMMDD指定）
       result_text = "不定期 ";
