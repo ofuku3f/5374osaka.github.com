@@ -623,7 +623,7 @@ $(function() {
     }else if (wastetoff == 1){
       $("#accordion").html("");
      // $("#select_area").html(checkAreaMasterName);
-      return;
+      //return;
     }
     setSelectedAreaName(areaModels[row_index].label);
 
@@ -661,10 +661,10 @@ $(function() {
       styleHTML = "";
       accordionHTML = "";
       //$("#accordion").html("");
-      //$("#select_area").html(checkAreaMasterName);
+      $("#select_area").html(checkAreaMasterName);
       //setSelectedAreaName("");
-    }
-    */
+    }*/
+    
     
     
     areaModels.length = 0;
