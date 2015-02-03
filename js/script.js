@@ -620,6 +620,10 @@ $(function() {
       $("#accordion").html("");
       setSelectedAreaName("");
       return;
+    }else if (wastetoff == 1){
+      $("#accordion").html("");
+      $("#select_area").html(checkAreaMasterName);
+      return;
     }
     setSelectedAreaName(areaModels[row_index].label);
 
@@ -652,7 +656,7 @@ $(function() {
       setSelectedAreaName("");
     }
 
-  /*ゴミ収集なしのデータの時のアコーディオンを閉じる処理-くらの*/
+  /*ゴミ収集なしのデータの時のアコーディオンを閉じる処理-くらの
     if (wastetoff == 1){
       styleHTML = "";
       accordionHTML = "";
@@ -660,7 +664,7 @@ $(function() {
       //$("#select_area").html(checkAreaMasterName);
       //setSelectedAreaName("");
     }
-    
+    */
     
     
     areaModels.length = 0;
