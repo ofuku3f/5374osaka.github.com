@@ -622,7 +622,7 @@ $(function() {
       return;
     }else if (wastetoff == 1){
       $("#accordion").html("");
-      $("#select_area").html(checkAreaMasterName);
+     // $("#select_area").html(checkAreaMasterName);
       return;
     }
     setSelectedAreaName(areaModels[row_index].label);
