@@ -118,6 +118,9 @@ a,a:hover{
 	text-align: center;
 	font-size: 20px;
 }
+#select_area_master{
+	font-size: 25px;
+}
 #select_area{
 	font-size: 25px;
 }
