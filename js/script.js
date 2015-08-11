@@ -21,6 +21,10 @@ var AreaModel = function() {
     休止期間（主に年末年始）かどうかを判定します。
   */
   this.isBlankDay = function(currentDate) {
+    /* 2015.8.12 本家最新版より追加*/
+     if (!this.center) {
+        return false;
+    }
     var period = [this.center.startDate, this.center.endDate];
 
     if (period[0].getTime() <= currentDate.getTime() &&
