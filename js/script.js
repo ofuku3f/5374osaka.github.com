@@ -72,10 +72,18 @@ var TrashModel = function(_lable, _cell, remarks) {
   this.mostRecent;
   this.dayList;
   this.mflag = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-  if (_cell.search(/:/) >= 0) {
+  /*2015.8.12 本家最新版より追加修正*/
+    /*if (_cell.search(/:/) >= 0) {*/
+  var monthSplitFlag=_cell.search(/:/)>=0
+  if (monthSplitFlag) {
     var flag = _cell.split(":");
     this.dayCell = flag[0].split(" ");
     var mm = flag[1].split(" ");
+  /*2015.8.12 本家最新版より追加修正*/  
+  } else if (_cell.length == 2 && _cell.substr(0,1) == "*") {
+    this.dayCell = _cell.split(" ");
+    var mm = new Array();
+   /*ここまで*/ 
   } else {
     this.dayCell = _cell.split(" ");
     var mm = new Array("4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3");
