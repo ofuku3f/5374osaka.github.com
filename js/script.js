@@ -25,6 +25,7 @@ var AreaModel = function() {
      if (!this.center) {
         return false;
     }
+    /*ここまで*/
     var period = [this.center.startDate, this.center.endDate];
 
     if (period[0].getTime() <= currentDate.getTime() &&
@@ -48,7 +49,11 @@ var AreaModel = function() {
   ゴミのカテゴリのソートを行います。
 */
   this.sortTrash = function() {
-    this.trash.sort(function(a, b) {
+    this.trash.sort(function(a, b) 
+    /* 2015.8.12 本家最新版より追加*/
+    if (a.mostRecent === undefined) return 1;
+    if (b.mostRecent === undefined) return -1;
+    /*ここまで*/
       var at = a.mostRecent.getTime();
       var bt = b.mostRecent.getTime();
       if (at < bt) return -1;
