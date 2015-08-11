@@ -50,10 +50,10 @@ var AreaModel = function() {
 */
   this.sortTrash = function() {
     this.trash.sort(function(a, b){
-    /* 2015.8.12 本家最新版より追加
+    /* 2015.8.12 本家最新版より追加*/
     if (a.mostRecent === undefined) return 1;
     if (b.mostRecent === undefined) return -1;
-    ここまで*/
+    /*ここまで*/
       var at = a.mostRecent.getTime();
       var bt = b.mostRecent.getTime();
       if (at < bt) return -1;
