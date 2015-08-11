@@ -79,11 +79,11 @@ var TrashModel = function(_lable, _cell, remarks) {
     var flag = _cell.split(":");
     this.dayCell = flag[0].split(" ");
     var mm = flag[1].split(" ");
-  /*2015.8.12 本家最新版より追加修正
+  /*2015.8.12 本家最新版より追加修正*/
   } else if (_cell.length == 2 && _cell.substr(0,1) == "*") {
     this.dayCell = _cell.split(" ");
     var mm = new Array();
-   ここまで*/ 
+   /*ここまで*/ 
   } else {
     this.dayCell = _cell.split(" ");
     var mm = new Array("4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3");
