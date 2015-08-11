@@ -73,9 +73,9 @@ var TrashModel = function(_lable, _cell, remarks) {
   this.dayList;
   this.mflag = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
   /*2015.8.12 本家最新版より追加修正*/
-    /*if (_cell.search(/:/) >= 0) {*/
-  var monthSplitFlag=_cell.search(/:/)>=0
-  if (monthSplitFlag) {
+  if (_cell.search(/:/) >= 0) {
+  /*var monthSplitFlag=_cell.search(/:/)>=0
+  if (monthSplitFlag) {*/
     var flag = _cell.split(":");
     this.dayCell = flag[0].split(" ");
     var mm = flag[1].split(" ");
